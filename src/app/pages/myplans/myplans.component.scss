@@ -1,0 +1,849 @@
+@use 'fonts';
+@use 'colors';
+@use 'flex' as *;
+@use 'filter-core';
+
+.intro-text {
+  @include fonts.Roboto(regular);
+  font-size: 16px;
+  color: colors.$text-disabled-gray;
+  margin-left: -10px;
+  padding-bottom: 30px;
+}
+
+.icon-arrow {
+  color: colors.$headings-dark-color !important;
+  float: right;
+  width: 11px;
+  height: 18px;
+  .svg-inline--fa.fa-w-10 {
+    font-size: 1.45em;
+  }
+}
+.plan-results-container {
+  display: flex;
+  padding: 0;
+  .main-result {
+    height: 100%;
+    .main-result-container {
+      height: 100%;
+    }
+  }
+  .dynamic-content {
+    .details-right-link {
+      @include fonts.Roboto(bold);
+      margin-bottom: 15px;
+      width: 100% !important;
+      text-align: left;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      span {
+        color: colors.$background-white-color !important;
+      }
+      span.icon-arrow {
+        color: colors.$headings-dark-color !important;
+        float: right;
+        width: 11px;
+        height: 18px;
+      }
+      @media (max-width: 992px) {
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding: 0 15px;
+      }
+    }
+    div {
+      text-align: center;
+      color: colors.$text-gray-color;
+      font-size: 24px;
+      @include fonts.Roboto(light);
+    }
+  }
+  .plan-name-header {
+    @include fonts.Roboto(regular);
+    font-size: 18px;
+    color: colors.$headings-dark-color;
+  }
+  .plan-group-name-header {
+    @include fonts.Roboto(light);
+    font-size: 12px;
+    color: colors.$text-normal-color;
+    margin-left: 0;
+    line-height: 16px;
+    margin-bottom: 10.6px;
+  }
+  .plan-label-name {
+    @include fonts.Roboto(medium);
+    font-size: 12px;
+    color: colors.$text-normal-color;
+    float: left;
+    white-space: pre;
+  }
+  .plan-label-value {
+    @include fonts.Roboto(light);
+    font-size: 12px;
+    color: colors.$text-sub-list;
+  }
+  .side-nav-container {
+    padding: 0;
+    overflow: hidden;
+    a {
+      cursor: pointer;
+      color: colors.$link-color;
+    }
+  }
+}
+
+.calendar-min-height {
+  min-height: 65px;
+}
+
+.calendar-main-container {
+  @include flexbox;
+  .mat-calendar-previous-button:focus {
+    background-color: unset !important;
+  }
+}
+
+.date-filter-custom {
+  display: flex;
+  flex-direction: column;
+  margin-top: -25px;
+  .date-filter-range {
+    display: flex;
+    .from-date {
+      padding-right: 2px;
+    }
+  }
+  .mat-hint-message {
+    font-size: 12px;
+  }
+  .date-filter-custom-date {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    .fa-calendar-alt {
+      cursor: pointer;
+      margin-top: 17px;
+      margin-right: 10px;
+      color: colors.$icon-color;
+      @media (max-width: 992px) {
+        margin-right: 15px;
+      }
+    }
+  }
+  .custom-range-error-message {
+    color: colors.$non-vdk-41-red;
+    font-size: 12px;
+    padding-top: 5px;
+  }
+}
+
+.input-calender {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 993px) {
+  .header {
+    color: colors.$headings-dark-color;
+    font-size: 24px;
+    @include fonts.Roboto(light);
+    margin: 20px 0 17px 0 !important;
+    text-align: left;
+    padding-left: 10px;
+  }
+  .intro-text {
+    @include fonts.Roboto(regular);
+    font-size: 16px;
+    color: colors.$text-disabled-gray;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 100% !important;
+  }
+  .header {
+    color: colors.$headings-dark-color;
+    font-size: 24px;
+    @include fonts.Roboto(light);
+    margin: 20px 15px;
+    text-align: left;
+  }
+  .plan-results-container {
+    flex-direction: column;
+
+    .middle-container {
+      margin-top: 15px;
+      width: 100% !important;
+      padding: 0 !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      border-bottom: 1px solid colors.$file-card-border-color;
+    }
+    .dynamic-content {
+      width: 100% !important;
+    }
+    .side-nav-container {
+      width: 100% !important;
+      margin: 0 !important;
+      overflow: visible;
+    }
+  }
+}
+
+/* Mat Accordion*/
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.mat-expansion-panel-header {
+  padding: 0 0 0 0;
+  color: colors.$header-color;
+}
+
+.drupal-action-row {
+  border-top-style: none;
+  border-bottom-style: none;
+  border-top-width: 1px;
+  background-color: transparent;
+  border-bottom-width: 1px;
+  border-top-color: colors.$non-vdk-11-grey;
+  border-bottom-color: colors.$non-vdk-11-grey;
+  @media (min-width: 993px) {
+    border-left-style: none;
+    border-right-style: none;
+    border-left-color: colors.$non-vdk-11-grey;
+    border-right-color: colors.$non-vdk-11-grey;
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
+  @media (max-width: 992px) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  padding: 0 !important;
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.vl {
+  div {
+    margin-left: 0;
+    @media (max-width: 992px) {
+      padding-left: 3px;
+      margin-right: 0;
+    }
+  }
+}
+
+//css taken from benefits page css from benefits page end  @ line 606
+.header {
+  color: colors.$headings-dark-color;
+  font-size: 24px;
+  @include fonts.Roboto(light);
+  margin: 20px 0;
+  text-align: left;
+}
+
+.drupal-plans-content {
+  padding-left: 10px;
+  .drupal-result {
+    padding: 7px 1.2rem 0 0 !important;
+    a {
+      @include fonts.Roboto(medium);
+      font-size: 12px;
+      color: colors.$background-title-separator-color;
+      letter-spacing: -0px;
+      display: block;
+      span {
+        font-size: 18px;
+        color: colors.$background-title-separator-color;
+        letter-spacing: -0px;
+        padding-right: 1px;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.title-color {
+  color: colors.$non-vdk-47-blue;
+}
+
+.benefits-intro-text {
+  @include fonts.Roboto(regular);
+  font-size: 12px;
+  color: colors.$non-vdk-3-grey;
+  line-height: 16px;
+}
+
+.benefitDate-label {
+  @include fonts.Roboto(medium);
+  font-size: 10px;
+  color: colors.$text-normal-color;
+  float: left;
+  line-height: 16px;
+}
+
+.benefitDate-value {
+  @include fonts.Roboto(light);
+  font-size: 12px;
+  color: colors.$text-normal-color;
+  line-height: 16px;
+  padding-left: 5px;
+}
+
+.icon-arrow {
+  color: colors.$headings-dark-color !important;
+  float: right;
+  width: 11px;
+  height: 18px;
+}
+
+.plans-flex {
+  @include flexbox;
+}
+
+.plan-results-container {
+  @include flexbox;
+  padding: 0;
+  .dynamic-content {
+    .details-right-link {
+      margin-bottom: 15px;
+      width: 100% !important;
+      display: flex;
+      @include fonts.Roboto(bold);
+      text-align: left;
+      font-size: 13px;
+      cursor: pointer;
+      span {
+        color: colors.$background-title-separator-color !important;
+      }
+      span.text-route {
+        margin: 0 0 0 2%;
+      }
+      span.icon-arrow {
+        color: colors.$background-title-separator-color !important;
+        float: right;
+        width: 11px;
+        height: 18px;
+      }
+      @media (max-width: 992px) {
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding: 0 15px;
+      }
+    }
+    .details-right-link-alt {
+      width: 100% !important;
+      height: 100%;
+      @include fonts.Roboto(bold);
+      text-align: left;
+      font-size: 13px;
+      cursor: pointer;
+      span {
+        color: colors.$background-title-separator-color !important;
+      }
+      span.text-route {
+        margin: 0 0 0 2%;
+      }
+      span.icon-arrow {
+        color: colors.$background-title-separator-color !important;
+        float: right;
+        width: 11px;
+        height: 18px;
+      }
+    }
+    .myplans-pay-my-bill {
+      cursor: pointer;
+      @include fonts.Roboto(regular);
+      background: #efefef;
+      width: 100%;
+      padding: 1.3rem 2.5rem;
+      font-size: .8rem;
+      color: colors.$bcbsma-blue;
+      @include flexbox;
+      @include flex-direction(row);
+      @include align-items(space);
+      @include justify-content(space-between);
+      div {
+        color: colors.$bcbsma-blue;
+        font-size: .8rem;
+        span {
+          margin-left: 0.6rem;
+        }
+      }
+    }
+  }
+  .plan-name-header {
+    @include fonts.Roboto(bold);
+    font-size: 16px !important;
+    color: colors.$headings-dark-color;
+  }
+  .plan-group-name-header {
+    @include fonts.Roboto(light);
+    font-size: 12px;
+    color: colors.$text-normal-color;
+    margin-left: 0;
+  }
+  .side-nav-container {
+    padding: 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .intro-text {
+    @include fonts.Roboto(regular);
+    font-size: 16px;
+    color: colors.$text-disabled-gray;
+    margin: 0 0 0 -10px !important;
+  }
+  .plan-results-container {
+    .dynamic-content {
+      .details-right-link-alt {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    margin: 20px 0;
+    padding: 0 15px;
+  }
+  .drupal-plans-content {
+    padding: 0 15px;
+    .drupal-result {
+      padding: 0 !important;
+    }
+    .close-icon {
+      padding: 0 !important;
+    }
+  }
+  .container {
+    width: 100% !important;
+  }
+  .plan-results-container {
+    @include flex-direction(column);
+    margin-bottom: 0;
+    .middle-container {
+      margin-top: 15px;
+      width: 100% !important;
+      padding: 0 15px !important;
+      @media (max-width: 992px) {
+        padding: 0 !important;
+      }
+    }
+    .dynamic-content {
+      width: 100% !important;
+    }
+    .side-nav-container {
+      width: 100% !important;
+    }
+  }
+}
+
+/* Mat accordion*/
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.mat-expansion-panel-header {
+  padding: 0;
+  color: colors.$headings-dark-color;
+  max-height: 41px;
+}
+
+::ng-deep .expand-class > .mat-expansion-indicator:after {
+  color: colors.$headings-dark-color;
+  @include fonts.Roboto(bold);
+  font-size: 14px;
+}
+
+// css from benefits page end  @ line 606
+
+.calendar-min-height {
+  min-height: 65px;
+}
+
+.calendar-main-container {
+  display: flex;
+  justify-content: space-around;
+  .calendar-container {
+    width: 380px !important;
+    position: relative;
+  }
+}
+
+mat-expansion-panel-header {
+  padding: 0 16px 0 14px !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .medicare-result-container {
+    flex-direction: column;
+    .result-container {
+      padding: 0 !important;
+    }
+    .side-nav-container {
+      display: none;
+    }
+    .show-side-content {
+      display: block;
+      padding: 0;
+    }
+    .hide-side-content {
+      display: none !important;
+    }
+  }
+  .filter-action-button {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    .filter-action-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      i {
+        font-size: 27px;
+      }
+    }
+    .clear-action-label {
+      cursor: pointer;
+      color: colors.$link-color;
+      font-size: 14px;
+      text-decoration: underline;
+      padding-left: 20px;
+      @include fonts.Roboto(bold);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .filter-btn {
+    padding: 0 10px 0 3% !important;
+    cursor: pointer;
+  }
+}
+
+.medicare-filter-inner-btn {
+  .filter-btn {
+    background: colors.$non-vdk-15-grey 100%;
+    color: colors.$header-color;
+    vertical-align: middle;
+    padding: 0.5rem 1rem 0.5rem 0;
+    @include fonts.Roboto(bold);
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .col.s10 {
+    margin-top: 5px;
+  }
+  h2 {
+    margin: 0;
+  }
+}
+
+.date-error {
+  color: colors.$error-alert-color;
+  span {
+    font-size: 12px;
+  }
+  i.arrow_forward {
+    position: relative;
+    font-size: 18px;
+    top: 4px;
+    display: inline-block;
+  }
+}
+
+.toggle-filter {
+  display: none;
+}
+
+.filter-mobile-divider {
+  border: 2px solid colors.$background-title-separator-color;
+}
+
+.closed-filter {
+  color: colors.$headings-dark-color;
+  @include fonts.Roboto(bold);
+  background: colors.$non-vdk-15-grey 20%;
+  width: 84px;
+}
+
+.filter-container .mat-list-item.calendar-min-height {
+  min-height: 44px;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .container-medications {
+    width: 100%;
+  }
+  .list-medication-container {
+    border-bottom: 1px solid colors.$textbox-border;
+  }
+  .filter-container mat-expansion-panel-header {
+    padding: 0 22px 0 12px !important;
+    margin: 0 !important;
+  }
+  .filter-menu-with-action {
+    display: flex !important;
+  }
+  .filter-menu {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .list-medication-container {
+    border: 1px solid colors.$textbox-border;
+  }
+}
+
+.sort-container {
+  display: flex;
+  .sort-by {
+    padding: 15px 5px 0 0;
+    @include fonts.Roboto(bold);
+  }
+  .mat-selection-list {
+    flex: 0.9;
+  }
+}
+
+.no-medications-available-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.no-medications-available,
+.no-medications-available-container {
+  .material-icons {
+    font-size: 54px;
+  }
+  .no-medications-icon {
+    padding: 20px 0;
+  }
+  .no-medications {
+    color: colors.$text-disabled-gray;
+    @include fonts.Roboto(bold);
+  }
+  .promotional-material {
+    background-color: lightcoral;
+    min-height: 100px;
+    padding: 20px;
+  }
+}
+
+.medicare-msg {
+  padding: 0 10px;
+  .no-search-result {
+    padding: 20px 0 10px 0;
+  }
+}
+
+.date-filter-custom {
+  display: flex;
+  flex-direction: column;
+  margin-top: -25px;
+  .date-filter-range {
+    display: flex;
+    .from-date {
+      padding-right: 2px;
+    }
+  }
+  .mat-hint-message {
+    font-size: 12px;
+  }
+  .date-filter-custom-date {
+    display: flex;
+    flex-direction: row;
+    .fa-calendar-alt {
+      cursor: pointer;
+      margin-top: 15px;
+      margin-right: 20px;
+    }
+  }
+  .custom-range-error-message {
+    color: red;
+    font-size: 12px;
+    padding-top: 5px;
+  }
+}
+
+.selected-sort {
+  @include fonts.Roboto(regular);
+  font-size: 14px;
+  color: black;
+}
+
+.filter-divider-row {
+  height: 1px;
+  background: colors.$non-vdk-15-grey;
+  width: 100%;
+}
+
+@media (min-width: 992px) and (max-width: 1150px) {
+  .clear-button,
+  .apply-button {
+    min-width: 70px;
+  }
+}
+
+.wrap-mat-radio-label {
+  white-space: normal;
+}
+
+.search-no-results-msg {
+  padding: 15px;
+  .search-clear-button {
+    background: colors.$new-color;
+    width: 100%;
+    margin: 20px 0;
+    color: colors.$text-white-color;
+    border-radius: 8px;
+  }
+  .search-option-header {
+    color: colors.$primary-color;
+    font-size: 18px;
+    @include fonts.Roboto(regular);
+  }
+  .search-msg {
+    font-size: 16px;
+    @include fonts.Roboto(regular);
+    color: colors.$text-gray-color;
+  }
+  .search-option {
+    font-size: 13px;
+    color: colors.$text-gray-color;
+    padding: 5px 0;
+  }
+}
+
+.medicare-result-container {
+  .mat-list-option {
+    height: auto !important;
+    min-height: 44px;
+  }
+}
+
+input.input-calender {
+  font-size: 14px;
+}
+
+input:not([type]),
+input:not([type]):focus:not([readonly]) {
+  box-shadow: none !important;
+  border-bottom: 1px solid colors.$non-vdk-6-grey !important;
+  font-size: 14px;
+}
+
+.mat-expansion-indicator {
+  color: colors.$headings-dark-color;
+}
+
+.title-dripal-pd {
+  padding-left: 0;
+  padding-right: 0;
+  @include fonts.Roboto(bold);
+  font-size: 13px;
+  color: colors.$title-color;
+  text-align: left;
+  line-height: 16px;
+  .close-icon {
+    font-size: 20px;
+    color: colors.$black-color;
+    text-align: right;
+  }
+}
+
+.close-icon {
+  font-size: 24px;
+  color: colors.$black-color;
+  text-align: right;
+  float: right;
+  cursor: pointer;
+}
+
+.close-button {
+  margin-left: 0;
+  width: 24px !important;
+  height: 24px !important;
+  cursor: pointer;
+  text-align: right;
+  @media (max-width: 992px) {
+    float: right;
+    margin-right: 0 !important;
+  }
+}
+
+.mobile-divider {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.list-plan-container {
+  cursor: pointer;
+
+  .disp-flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .list-plan-container {
+    margin-top: -1px;
+    border: 1px solid colors.$textbox-border;
+  }
+  .plan-list-desktop {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .list-plan-container {
+    border-bottom: 1px solid colors.$textbox-border;
+  }
+  .list-plan-inner-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+  }
+}
+
+.date-filter-padding {
+  padding-top: 109px !important;
+  padding-left: 15px;
+  @include fonts.Roboto(bold);
+}
+
+@media (max-width: 992px) {
+  .hide-side-content {
+    display: none !important;
+  }
+}
+
+.container-width {
+  width: 100%;
+}

@@ -1,0 +1,20 @@
+@use 'fonts';
+@use 'colors';
+
+@mixin vdkTextLink() {
+  margin-top: 5px;
+  a {
+    color: colors.$link-primary-color;
+  }
+  a:hover {
+    cursor: pointer;
+    color: colors.$link-secondary-color;
+  }
+  a:focus {
+    cursor: pointer;
+    color: colors.$link-color;
+  }
+  span {
+    @include fonts.Roboto(light);
+  }
+}

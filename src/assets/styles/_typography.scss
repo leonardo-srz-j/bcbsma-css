@@ -1,0 +1,215 @@
+@use 'fonts';
+@use 'colors';
+
+.ascendLayer {
+    z-index: 1002 !important;
+}
+.text-bold {
+    @include fonts.Roboto(bold);
+}
+
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+    letter-spacing: 0.5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn-half-width-right {
+  width: 48%;
+  float: right;
+}
+
+.btn-half-width-left {
+  width: 48%;
+  float: left;
+  text-align: center;
+}
+
+.btn-90 {
+    width: 90%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.sign-in-text {
+    color: colors.$non-vdk-24-blue;
+}
+
+.prv-color {
+    color: colors.$non-vdk-25-blue;
+}
+
+.btn {
+    text-transform: capitalize;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.br-top {
+    border-top: 1px solid colors.$black-color-border;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right !important;
+}
+
+h2 {
+    font-size: 20px;
+    @include fonts.Roboto(bold);
+}
+
+h3 {
+    font-size: 18px;
+    @include fonts.Roboto(bold);
+}
+
+p {
+    font-size: 14px;
+}
+
+.ft-5 {
+    @include fonts.Roboto(medium);
+}
+
+.br {
+    border: 1px solid colors.$border-gray;
+}
+
+.br-grey {
+    border-top: 1px solid colors.$non-vdk-14-grey;
+    border-left: 1px solid colors.$non-vdk-14-grey;
+    border-right: 1px solid colors.$non-vdk-14-grey;
+    @media only screen and (max-width: 992px) {
+        border-bottom: 0 solid transparent;
+        border-left: 0 solid colors.$non-vdk-14-grey;
+        border-right: 0 solid colors.$non-vdk-14-grey;
+    }
+}
+
+.br-trl-grey {
+    border-top: 1px solid colors.$non-vdk-11-grey;
+    border-left: 1px solid colors.$non-vdk-11-grey;
+    border-right: 1px solid colors.$non-vdk-11-grey;
+}
+
+.br-trl-B2 {
+    border-top: 1px solid colors.$non-vdk-11-grey;
+    @media only screen and (min-width: 992px) {
+        border-left: 1px solid colors.$non-vdk-11-grey;
+        border-right: 1px solid colors.$non-vdk-11-grey;
+    }
+}
+
+.br-blr {
+    border-bottom: 1px solid colors.$border-gray;
+    border-left: 1px solid colors.$border-gray;
+    border-right: 1px solid colors.$border-gray;
+}
+
+.font-18 {
+    font-size: 18px
+}
+
+.ft-16 {
+    font-size: 16px
+}
+
+.font-13-grey {
+    font-size: 12px;
+    color: colors.$disabled_text_color;
+}
+
+.font-14-grey {
+    font-size: 14px;
+    color: colors.$text-disabled-gray;
+}
+
+.font-16-grey {
+    font-size: 16px;
+    color: colors.$text-disabled-gray;
+    * {
+        font-size: 16px;
+    }
+}
+
+.info-text {
+    a {
+        @include fonts.Roboto(medium);
+        font-size: 12px;
+        color: colors.$link-primary-color;
+        text-decoration: underline;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: colors.$link-secondary-color;
+        ;
+    }
+    a:focus {
+        text-decoration: underline;
+        color: colors.$new-color;
+    }
+    p {
+        font-size: 12px;
+        color: colors.$black-color;
+    }
+}
+
+.verify-text {
+    a {
+        font-size: 16px;
+        color: colors.$link-primary-color;
+        line-height: 22px;
+        @include fonts.Roboto(regular);
+    }
+    a:hover {
+        text-decoration: underline;
+        color: colors.$link-secondary-color;
+    }
+    a:focus {
+        text-decoration: underline;
+        color: colors.$new-color;
+    }
+    p {
+        font-size: 16px;
+        color: colors.$text-disabled-gray;
+        line-height: 22px;
+        @include fonts.Roboto(regular);
+    }
+}
+
+.font-15-grey {
+    font-size: 15px;
+    color: colors.$non-vdk-3-grey;
+}
+
+
+/* Border Styles */
+
+.border-top-white {
+    border-top: 1px solid colors.$non-vdk-11-grey;
+}
+
+.border-bottom-white {
+    border-bottom: 1px solid colors.$background-white-color;
+}

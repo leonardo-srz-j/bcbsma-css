@@ -1,0 +1,159 @@
+@import './_colors.scss';
+
+// DM Sans fonts
+@mixin DMSans($weight) {
+  font-family: 'DM Sans', sans-serif !important;
+  @if $weight == bold {
+    font-weight: 700 !important;
+  }
+  @if $weight == medium {
+    font-weight: 500 !important;
+  }
+  @if $weight == regular {
+    font-weight: 400 !important;
+  }
+  @if $weight == normal {
+    font-weight: 400 !important;
+  }
+  @if $weight == light {
+    font-weight: 300 !important;
+  }
+  @if $weight == thin {
+    font-weight: 100 !important;
+  }
+}
+
+// 'Bebas Neue' fonts
+@mixin BebasNeue($weight) {
+  font-family: 'Bebas Neue', sans-serif !important;
+  @if $weight == bold {
+    font-weight: 700;
+  }
+  @if $weight == medium {
+    font-weight: 500 !important;
+  }
+  @if $weight == regular {
+    font-weight: 400 !important;
+  }
+  @if $weight == normal {
+    font-weight: 400 !important;
+  }
+  @if $weight == light {
+    font-weight: 300 !important;
+  }
+  @if $weight == thin {
+    font-weight: 100 !important;
+  }
+}
+
+@mixin Roboto($weight) {
+  font-family: Roboto, serif !important;
+  @if $weight==bold {
+    font-weight: 700 !important;
+  }
+  @if $weight==medium {
+    font-weight: 500 !important;
+  }
+  @if $weight==regular {
+    font-weight: 400 !important;
+  }
+  @if $weight==normal {
+    font-weight: 400 !important;
+  }
+  @if $weight==light {
+    font-weight: 300 !important;
+  }
+  @if $weight==thin {
+    font-weight: 100 !important;
+  }
+}
+
+@mixin FontAwesome5Free($weight) {
+  @if $weight==light {
+    font-family: FontAwesome5FreeLight !important;
+  }
+  @if $weight==regular {
+    font-family: FontAwesome5FreeRegular !important;
+  }
+  @if $weight==solid {
+    font-family: FontAwesome5FreeSolid !important;
+  }
+}
+
+@mixin FontAwesome5Pro($weight) {
+  @if $weight==light {
+    font-family: FontAwesome5ProLight !important;
+  }
+  @if $weight==regular {
+    font-family: FontAwesome5ProRegular !important;
+  }
+  @if $weight==solid {
+    font-family: FontAwesome5ProSolid !important;
+  }
+}
+
+h1,
+.header-h1 {
+  @include Roboto(light);
+  font-size: 24px !important;
+  color: $headings-dark-color !important;
+  line-height: 32px;
+  margin-bottom: 10px;
+  /*margin-top: 0px;*/
+}
+
+//H2 Header - Roboto Medium
+h2,
+.header-h2 {
+  @include Roboto(medium);
+  font-size: 22px !important;
+  color: $headings-dark-color !important;
+  line-height: 25px;
+}
+
+//H3 Header - Roboto Regular
+h3,
+.header-h3 {
+  @include Roboto(regular);
+  font-size: 20px !important;
+}
+
+//H5 Header - Roboto Light
+h5,
+.header-h5 {
+  @include Roboto(light);
+  font-size: 18px !important;
+}
+
+//H6 Header - Roboto Bold
+h6,
+.header-h6 {
+  @include Roboto(bold);
+  font-size: 16px !important;
+}
+
+//Body text - Roboto regular
+.normal-text {
+  @include Roboto(regular);
+  font-size: 16px !important;
+}
+
+//Footer text - Roboto regular
+.footer-text {
+  @include Roboto(regular);
+  font-size: 14px !important;
+}
+
+/* bebas-neue-regular - latin */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/bebasfonts/bebas-neue-v1-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Bebas Neue Regular'), local('BebasNeue-Regular'),
+  url('/assets/fonts/bebasfonts/bebas-neue-v1-latin-regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/assets/fonts/bebasfonts/bebas-neue-v1-latin-regular.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('/assets/fonts/bebasfonts/bebas-neue-v1-latin-regular.woff') format('woff'),
+    /* Modern Browsers */ url('/assets/fonts/bebasfonts/bebas-neue-v1-latin-regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('/assets/fonts/bebasfonts/bebas-neue-v1-latin-regular.svg#BebasNeue') format('svg'); /* Legacy iOS */
+}
